@@ -1,5 +1,5 @@
 == README
 
-[![Precursor](https://precursorapp.com/document/Untitled-17592202710746.svg?auth-token=)](https://precursorapp.com/document/Untitled-17592202710746)
+[![Precursor](https://precursorapp.com/document/Untitled-17592202711606.svg?auth-token=)](https://precursorapp.com/document/Untitled-17592202711606)
 
 <tt>rake doc:app</tt>.
