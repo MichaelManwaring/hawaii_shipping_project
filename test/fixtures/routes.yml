@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route_name: MyString
+  origin: 1
+  stop: 1
+  destination: 1
+  duration: 1
+
+two:
+  route_name: MyString
+  origin: 1
+  stop: 1
+  destination: 1
+  duration: 1
