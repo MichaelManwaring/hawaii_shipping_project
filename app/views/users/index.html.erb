@@ -6,8 +6,11 @@
 
 <% if @user.type == 'Customer' %>
 	<%= render 'jobs/form' %>
+	<%= render 'jobs/joblist' %>
+
 <% else %>
 	<%= render 'ships/form' %>
+	<%= render 'ships/shiplist' %>
 <% end %>
 
 
