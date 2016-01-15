@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	validates_presence_of :password, on: :create
 end
 class Captain < User
-	has_many :ships
+	has_many :ships, foreign_key: 'user_id'
 	has_many :trips, through: :ships
 end
 class Customer < User
