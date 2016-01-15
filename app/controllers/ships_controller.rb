@@ -6,6 +6,10 @@ class ShipsController < ApplicationController
   end
 
   def create
+  	puts "USER IS: "
+  	puts current_user
+  	puts current_user.inspect
+  	puts "*********************"
   	@current_user = current_user
   	@ship = Ship.new(ship_params)
   	@current_user.ships.push(@ship)
