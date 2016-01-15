@@ -12,6 +12,12 @@
 
 
 
+<!-- if current user is logged in as captian  -->
+<% if @current_user && @current_user.type == "Captain" %> 
+
+
+<% end %>
+
 <h1>Edit User</h1>
 <%= render 'users/edit' %>
 
