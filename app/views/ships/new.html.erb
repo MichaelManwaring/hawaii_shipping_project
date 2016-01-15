@@ -1,2 +1,20 @@
 <h1>Ships#new</h1>
 <p>Find me in app/views/ships/new.html.erb</p>
+
+#if current user is logged in as captian 
+
+#show form to create new ship for the captain
+
+<%= form_for @ship do |f| %>
+<%= f.label :ship_name %> <br>
+<%= f.text_field :ship_name %> <br>
+<%= f.label :container_space %> <br>
+<%= f.number_field :container_space %> <br>
+f.hidden_field :user_id, :value => @current_user.id <br>
+<%=f.submit :create %> 
+<% end %>
+
+#else
+#show message "Sorry, you do not have persmissions to access this page"
+#end
+
