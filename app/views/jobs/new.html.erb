@@ -1,2 +1,14 @@
 <h1>Jobs#new</h1>
 <p>Find me in app/views/jobs/new.html.erb</p>
+
+<%= form_for @job do |n| %>
+  <%= n.label(:job_name, "Job Name:") %>
+  <%= n.text_field(:job_name) %>
+  <%= n.label(:containers_needed, "Containers Needed:") %>
+  <%= n.text_field(:containers_needed) %>
+  <%= n.label(:cargo, "Description of Cargo:") %>
+  <%= n.text_field(:cargo) %>
+  <%= n.label(:delivery_by, "Deliver By:") %>
+  <%= n.date_field(:delivery_by) %>
+  <%= n.submit("Create Job Order!") %>
+<% end %>
