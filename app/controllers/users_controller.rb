@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def index
   	@user=current_user
+  	@job=Job.new
+  	@ship=Ship.new
   end
 
   def new

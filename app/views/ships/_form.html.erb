@@ -1,0 +1,9 @@
+<%= form_for @ship do |f| %>
+	<%= f.label :ship_name %> <br>
+	<%= f.text_field :ship_name %> <br>
+	<%= f.label :container_space %> <br>
+	<%= f.number_field :container_space %> <br>
+	<%= f.label :current_location %> <br>
+  	<%= f.select :current_location, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %>
+	<%=f.submit :create %> 
+<% end %>
