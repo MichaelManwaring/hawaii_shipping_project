@@ -1,2 +1,13 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+<%= flash[:alert] %>
+<h1>Sign up form</h1>
+<%= render 'users/form' %>
+<h1>Sign in form</h1>
+<%= render 'sessions/form' %>
+
+
+<% @users.each do |u| %>
+<%= content_tag :h4, u.fname %>
+<% end %>

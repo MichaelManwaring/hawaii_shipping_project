@@ -1,0 +1,16 @@
+<%= form_for @user do |n| %>
+  <%= n.label(:email, "Email:") %>
+  <%= n.text_field(:email) %>
+  <%= n.label(:password, "Password:") %>
+  <%= n.text_field(:password) %>
+  <%= n.label(:password_confirmation, "Confirm Password:") %>
+  <%= n.text_field(:password_confirmation) %>
+  <%= n.label(:company, "Company Name:") %>
+  <%= n.text_field(:company) %>
+  <%= n.label(:fname, "First Name:") %>
+  <%= n.text_field(:fname) %>
+  <%= n.label(:lname, "last Name:") %>
+  <%= n.text_field(:lname) %>
+  <%= n.submit("Sign Up as Captain!") %>
+  <%= n.submit("Sign Up as Customer!") %>
+<% end %>
