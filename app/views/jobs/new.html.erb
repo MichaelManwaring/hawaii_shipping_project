@@ -2,6 +2,10 @@
 <p>Find me in app/views/jobs/new.html.erb</p>
 
 <%= form_for @job do |n| %>
+  <%= n.label(:origin, "Shipping From:") %>
+  <%= n.select :origin, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %>
+  <%= n.label(:destination, "Shipping to:") %>
+  <%= n.select :destination, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %>
   <%= n.label(:job_name, "Job Name:") %>
   <%= n.text_field(:job_name) %>
   <%= n.label(:containers_needed, "Containers Needed:") %>
