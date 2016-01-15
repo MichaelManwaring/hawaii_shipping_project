@@ -3,6 +3,12 @@
 
 <%= content_tag :h2, "You are logged in as #{@user.type} #{@user.fname}" %>
 
+<!-- if current user is logged in as captian  -->
+<% if @current_user && @current_user.type == "Captain" %> 
+
+
+<% end %>
+
 <h1>Edit User</h1>
 <%= render 'users/edit' %>
 
