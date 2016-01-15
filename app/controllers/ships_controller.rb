@@ -3,6 +3,7 @@ class ShipsController < ApplicationController
 
   def index
   	@ships = Ship.all
+  	@user = current_user
   end
 
   def create
@@ -18,12 +19,12 @@ class ShipsController < ApplicationController
 	  	else
 			flash[:alert] = "Could Not Save Ship"
 	  	end
-	redirect_to root_path
+	 redirect_to users_path
   end
 
   def new
   	@ship = Ship.new
-  	@current_user = current_user
+  	@user = current_user
   end
 
   def show
@@ -37,6 +38,10 @@ class ShipsController < ApplicationController
   end
 
   def destroy
+	  @a = params[:id]
+	  association = Ship.where(id: @a)
+	  association.delete_all
+	  redirect_to (:back)  
   end
 
   private
