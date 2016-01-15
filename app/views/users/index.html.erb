@@ -2,6 +2,18 @@
 <p>Find me in app/views/users/index.html.erb</p>
 
 <%= content_tag :h2, "You are logged in as #{@user.type} #{@user.fname}" %>
+<%= flash[:alert] %>
+
+<% if @user.type == 'Customer' %>
+	<%= render 'jobs/form' %>
+	<%= render 'jobs/joblist' %>
+
+<% else %>
+	<%= render 'ships/form' %>
+	<%= render 'ships/shiplist' %>
+<% end %>
+
+
 
 <!-- if current user is logged in as captian  -->
 <% if @current_user && @current_user.type == "Captain" %> 
