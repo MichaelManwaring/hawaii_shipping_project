@@ -8,5 +8,5 @@ class Captain < User
 	has_many :trips, through: :ships
 end
 class Customer < User
-	has_many :jobs
+	has_many :jobs, foreign_key: 'user_id'
 end

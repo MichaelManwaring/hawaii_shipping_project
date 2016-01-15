@@ -1,7 +1,4 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
-
-<%= form_for @user do |n| %>
+<%= form_for @user, url: user_path(@user), method: :put do |n| %>
   <%= n.label(:email, "Email:") %>
   <%= n.text_field(:email) %>
   <%= n.label(:password, "Password:") %>
@@ -14,6 +11,5 @@
   <%= n.text_field(:fname) %>
   <%= n.label(:lname, "last Name:") %>
   <%= n.text_field(:lname) %>
-  <%= n.submit("Sign Up as Captain!") %>
-  <%= n.submit("Sign Up as Customer!") %>
+  <%= n.submit("Edit Profile") %>
 <% end %>
