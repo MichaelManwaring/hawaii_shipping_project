@@ -5,4 +5,4 @@
 
 
 
-<%=link_to "Log Out", sessions_path, method: :delete, remote: true %>
+<%=link_to "Log Out", session_path(current_user), method: :delete %>
