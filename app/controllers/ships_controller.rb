@@ -18,7 +18,7 @@ class ShipsController < ApplicationController
 	  	else
 			flash[:alert] = "Could Not Save Ship"
 	  	end
-	redirect_to root_path
+	 redirect_to user_path(User.find(session[:user_id]))
   end
 
   def new
