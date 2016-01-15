@@ -9,5 +9,6 @@
 
 
 <% @users.each do |u| %>
-<%= content_tag :h4, u.fname %>
+<%= content_tag :h4, u.fname + ": " + u.type %>
+<br>
 <% end %>
