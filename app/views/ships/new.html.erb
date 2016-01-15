@@ -2,19 +2,20 @@
 
 if current user is logged in as captian <br>
 
-if @current_user && @current_user.type == "Captain" %> <br>
+ if @current_user && @current_user.type == "captain" %> <br>
 
 show form to create new ship for the captain <br>
 
 <%= form_for @ship do |f| %>
-<%= f.label :ship_name %> <br>
-<%= f.text_field :ship_name %> <br>
-<%= f.label :container_space %> <br>
-<%= f.number_field :container_space %> <br>
-f.label :current_location %> <br>
-f.number_field :current_location %> <br>
-f.hidden_field :user_id, :value => @current_user.id %> <br>
-<%=f.submit :create %> 
+	<%= f.label :ship_name %> <br>
+	<%= f.text_field :ship_name %> <br>
+	<%= f.label :container_space %> <br>
+	<%= f.number_field :container_space %> <br>
+	<%= f.label :current_location %> <br>
+	<%= f.number_field :current_location %> <br>
+
+	<%=f.submit :create %> 
+
 <% end %>
 
 else <br>

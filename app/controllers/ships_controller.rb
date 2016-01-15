@@ -1,17 +1,25 @@
 class ShipsController < ApplicationController
-  #before_filter :authorize
+  before_filter :authorize
 
   def index
   	@ships = Ship.all
   end
 
   def create
-  	@ship = Ship.create(ship_params)
-  	redirect_to root_path
+  	@current_user = current_user
+  	@ship = Ship.new(ship_params)
+  	@current_user.ships.push(@ship)
+	  	if @ship.save()
+	  		flash[:alert] = "Ship Saved!"
+	  	else
+			flash[:alert] = "Could Not Save Ship"
+	  	end
+	redirect_to root_path
   end
 
   def new
   	@ship = Ship.new
+  	@current_user = current_user
   end
 
   def show
