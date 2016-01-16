@@ -1,0 +1,3 @@
+<% @user.followships.all.each do |f| %>
+   <%= (Ship.find(f.ship_id)).ship_name %> 
+<% end %>

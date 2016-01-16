@@ -44,6 +44,13 @@ class ShipsController < ApplicationController
 	  association.delete_all
 	  redirect_to (:back)  
   end
+  # Method to allow user to follow another user.
+
+  def follow
+    puts "_________________BAHHHHHHH_______________________"
+    @followship=Followship.create(ship_id: :ship_id)
+    current_user.followships << (@followship)
+  end
 
   private
 
