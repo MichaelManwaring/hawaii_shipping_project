@@ -5,13 +5,18 @@
 <%= flash[:alert] %>
 
 <% if @user.type == 'Customer' %>
+	<%= content_tag :h3, "Shipping order form" %>
 	<%= render 'jobs/form' %>
-	<%= render 'jobs/joblist' %>
-
 <% else %>
-	<%= render 'ships/form' %>
+	<%= content_tag :h3, "The #{@user.company} fleet:"  %>
 	<%= render 'ships/shiplist' %>
+	<%= content_tag :h3, "Add a Ship to the #{@user.company} fleet!"  %>
+	<%= render 'ships/form' %>
+	<%= content_tag :h3, "Ships you follow"  %>
+	<%= render 'ships/followships' %>
 <% end %>
+<%= content_tag :h3, "The Job Board"  %>
+<%= render 'jobs/joblist' %>
 
 
 

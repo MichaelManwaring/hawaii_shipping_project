@@ -1,6 +1,10 @@
 <% Job.all.each do |j| %>
-   <% if @user = current_user %>
+   <% if @current_user.type == "Captain" %>
+	   <%= j.job_name %> 
+	   <%= "by customer #{(User.find(j.user_id)).fname} from #{(User.find(j.user_id)).company}" %>
+   <% elsif @current_user[:id] == j.user_id && @current_user.type == "Customer" %> 
    	  <%= j.job_name %> 
-      <%= link_to 'Delete',  {:controller => "ships", :action => 'destroy', :id => j.id}, :confirm => "Are you sure you want to delete this ship?", :method => :delete %> <br>
+      <%= link_to 'Delete',  {:controller => "jobs", :action => 'destroy', :id => j.id}, :confirm => "Are you sure you want to delete this ship?", :method => :delete %> 
    <% end %>
+   <br>
 <% end %>

@@ -22,7 +22,17 @@ class JobsController < ApplicationController
 
   def edit
   end
-  private
+  
+  def destroy
+    @user = current_user
+	@a = params[:id]
+	association = Job.where(id: @a)
+	association.delete_all
+  	redirect_to (:back)  
+  end
+
+  private #####################################
+  
   def job_params
   	params.require(:job).permit(:job_name,:containers_needed,:cargo,:delivery_by,:origin,:destination)
   end
