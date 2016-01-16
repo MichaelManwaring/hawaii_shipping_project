@@ -10,9 +10,9 @@ class JobsController < ApplicationController
   	@user=current_user
   	@current_user.jobs.push(@job)
 	  	if @job.save()
-	  		flash[:alert] = "Ship Saved!"
+	  		flash[:alert] = "Job Saved!"
 	  	else
-			flash[:alert] = "Could Not Save Ship"
+			flash[:alert] = "Could Not Save Job, Please Try Again."
 	  	end
 	redirect_to root_path
   end

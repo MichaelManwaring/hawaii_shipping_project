@@ -29,5 +29,5 @@
 <h1>Edit User</h1>
 <%= render 'users/edit' %>
 
-<%=link_to "Log Out", session_path(current_user), method: :delete %>
-<%=link_to "Delete Your Account", user_path(current_user), method: :delete %>
+<%= link_to "Log Out", session_path(current_user), method: :delete %>
+<%= link_to "Delete Your Account", user_path(current_user), method: :delete %>

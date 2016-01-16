@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116181246) do
 
   create_table "followships", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160116181246) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "jobs", force: :cascade do |t|
     t.string   "job_name"
@@ -49,8 +49,12 @@ ActiveRecord::Schema.define(version: 20160116181246) do
     t.string   "ship_name"
     t.integer  "container_space"
     t.integer  "current_location"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "trips", force: :cascade do |t|
