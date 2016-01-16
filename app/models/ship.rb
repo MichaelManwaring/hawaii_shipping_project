@@ -7,4 +7,6 @@ class Ship < ActiveRecord::Base
 	:default_url => "/images/:style/missing.png"
 
 	validates_attachment_content_type :photo, :content_type => [/\Aimage\/.*\Z/, /png\Z/, /jpe?g\Z/, /gif\Z/]
+
+	validates_uniqueness_of :ship_name
 end

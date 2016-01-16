@@ -17,7 +17,7 @@ class ShipsController < ApplicationController
 	  	if @ship.save()
 	  		flash[:alert] = "Ship Saved!"
 	  	else
-			flash[:alert] = "Could Not Save Ship"
+			  flash[:alert] = "Could Not Save Ship"
 	  	end
 	 redirect_to users_path
   end
