@@ -38,6 +38,7 @@ class ShipsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
 	  @a = params[:id]
 	  association = Ship.where(id: @a)
 	  association.delete_all
