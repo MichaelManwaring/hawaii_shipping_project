@@ -50,6 +50,6 @@ class ShipsController < ApplicationController
   # this provdes additional security by only allowing the permitted variables to be accessed and changed.
 
   def ship_params
-    params.require(:ship).permit(:ship_name, :container_space, :current_location)
+    params.require(:ship).permit(:ship_name, :container_space, :current_location, :photo)
   end
 end

@@ -1,6 +1,9 @@
 <% Ship.all.each do |s| %>
+   <%= image_tag s.photo.url(:medium) %>
    <%= s.ship_name %> |
    <% if @current_user[:id] == s.user_id && @current_user.type == "Captain" %> 
       <%= link_to 'Delete',  {:controller => "ships", :action => 'destroy', :id => s.id}, :confirm => "Are you sure you want to delete this ship?", :method => :delete %> <br>
    <% end %>
 <% end %>
+
+
