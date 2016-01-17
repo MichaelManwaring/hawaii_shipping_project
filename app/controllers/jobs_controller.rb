@@ -7,9 +7,18 @@ class JobsController < ApplicationController
   end
   def create
   	@job=Job.new(job_params)
+  	# calculating the cost with a discount at higher numbers of containers
+  	if @job.containers_needed.to_int < 10
+  		@cost = 200*@job.containers_needed
+  	elsif @job.containers_needed < 50
+  		@cost = 150*@job.containers_needed
+  	else
+  		@cost = 100*@job.containers_needed
+  	end
+  	@job.cost=@cost
   	@user=current_user
   	@current_user.jobs.push(@job)
-	  	if @job.save()
+	  	if @cost > 1000 && @job.save()
 	  		flash[:alert] = "Job Saved!"
 	  	else
 			flash[:alert] = "Could Not Save Job, Please Try Again."
