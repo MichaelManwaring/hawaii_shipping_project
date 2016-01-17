@@ -29,6 +29,13 @@ class ShipsController < ApplicationController
 
   def show
   	@ship = Ship.find(params[:id])
+    @routes = []
+    Route.all.each do |r| 
+      if r.origin == @ship.current_location
+        @routes.push(r)
+      end
+    end
+    @jobs=Job.all
   end
 
   def update

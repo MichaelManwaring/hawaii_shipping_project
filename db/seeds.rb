@@ -10,14 +10,49 @@
 
 # Captains:
 
-User.create(fname: "Erin", lname: "Mahon", email: "erin@gmail.com", company: "Ahola Shipping", password_digest: "password", type: "Captain")
-User.create(fname: "Michael", lname: "Manwaring", email: "michael@gmail.com", company: "Quick Ship", password_digest: "password", type: "Captain")
-User.create(fname: "Jeff", lname: "Bowne", email: "jeff@gmail.com", company: "Bowne Shipping", password_digest: "password", type: "Captain")
-User.create(fname: "Colin", lname: "Mahon", email: "colin@gmail.com", company: "Colin's Shipping", password_digest: "password", type: "Captain")
+User.create(fname: "Erin", lname: "Mahon", email: "erin@gmail.com", company: "Ahola Shipping", password: "password", type: "Captain")
+User.create(fname: "Mike", lname: "Manwaring", email: "mike@gmail.com", company: "Quick Ship", password: "password", type: "Captain")
+User.create(fname: "Jeff", lname: "Bowne", email: "jeff@gmail.com", company: "Bowne Shipping", password: "password", type: "Captain")
+User.create(fname: "Jimmy", lname: "Internet", email: "jimmy@internet.com", company: "Internet by Boat", password: "qwerty", type: "Captain")
+
 
 # Customers:
 
-User.create(fname: "Rachel", lname: "Smith", email: "rachel@gmail.com", company: "Rachel's Pet Supplies", password_digest: "password", type: "Customer")
-User.create(fname: "Michael", lname: "Stafford", email: "michael@gmail.com", company: "Hello Fresh", password_digest: "password", type: "Customer")
-User.create(fname: "Natalie", lname: "Navarre", email: "natalie@gmail.com", company: "Building Suppliers", password_digest: "password", type: "Customer")
+User.create(fname: "Rachel", lname: "Smith", email: "rachel@gmail.com", company: "Rachel's Pet Supplies", password: "password", type: "Customer")
+User.create(fname: "Michael", lname: "Stafford", email: "michael@gmail.com", company: "Hello Fresh", password: "password", type: "Customer")
+User.create(fname: "Natalie", lname: "Navarre", email: "natalie@gmail.com", company: "Building Suppliers", password: "password", type: "Customer")
+User.create(fname: "Timmy", lname: "Ahola", email: "timmy@aloha.com", company: "Timmy's Hawaiian Shirts", password: "qwerty", type: "Customer")
+
+
+
+#route creation using creation method defined in model
+# first set of routes travel from big island to big island with a stop midway at a small island
+Route.route_hash(0, 2, 4)
+Route.route_hash(0, 3, 5)
+Route.route_hash(1, 2, 5)
+Route.route_hash(1, 3, 4)
+Route.route_hash(4, 2, 0)
+Route.route_hash(5, 3, 0)
+Route.route_hash(5, 2, 1)
+Route.route_hash(4, 3, 1)
+# second set of routes allow for exchanges between big islands on the same end of the state
+Route.route_hash(0, 1, 5)
+Route.route_hash(1, 0, 4)
+Route.route_hash(5, 4, 0)
+Route.route_hash(4, 3, 1)
+# the third set of routes allows boats created at the small islands to leave, but no routes ever end on Molokai or Lanai
+Route.route_hash(3, 4, 0)
+Route.route_hash(3, 4, 5)
+Route.route_hash(3, 2, 1)
+Route.route_hash(2, 3, 4)
+Route.route_hash(2, 1, 5)
+Route.route_hash(2, 1, 0)
+# puts Route.all
+
+Job.rand_jobs
+puts Job.all
+
+
+
+
 
