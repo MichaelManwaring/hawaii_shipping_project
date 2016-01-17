@@ -21,7 +21,3 @@ $("#notice").show();
 setTimeout(function() { $("#notice").hide(); }, 3000);
 
 
-
-$("#sign_up_button").click(function () {
-$("#sign_up").toggle("fast");
-})

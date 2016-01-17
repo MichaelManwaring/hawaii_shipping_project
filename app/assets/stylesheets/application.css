@@ -21,7 +21,6 @@
 	background-size: 100%;
 	z-index: -1;
 }
-
 #logo {
 	width: 30%;
 	position: relative;
@@ -32,13 +31,11 @@
 	position: relative;
 	margin-left: 8%;
 }
-
 #header {
 	z-index: 1;
 	position: absolute;
 	background-color: #ffffff;
 }
-
 #sign_in {
 	text-align: right;
 	width: 30%;
@@ -57,7 +54,6 @@
 	width: 50%;
 	margin-left: 25%;
 	padding: 10px;
-
 }
 #users_list {
 	border: 2px solid black;
@@ -73,9 +69,6 @@
 	padding-top: 10%;
 	/*position: absolute;*/
 	z-index: 2;
+}
 
-}
-#sign_up {
-	display: none;
-}
 
