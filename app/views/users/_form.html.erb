@@ -1,16 +1,18 @@
-<%= form_for @user do |n| %>
-  <%= n.label(:email, "Email:") %>
-  <%= n.email_field(:email) %>
-  <%= n.label(:password, "Password:") %>
-  <%= n.password_field(:password) %>
-  <%= n.label(:password_confirmation, "Confirm Password:") %>
-  <%= n.password_field(:password_confirmation) %>
-  <%= n.label(:company, "Company Name:") %>
-  <%= n.text_field(:company) %>
-  <%= n.label(:fname, "First Name:") %>
-  <%= n.text_field(:fname) %>
-  <%= n.label(:lname, "last Name:") %>
-  <%= n.text_field(:lname) %>
-  <%= n.submit("Sign Up as Captain!") %>
-  <%= n.submit("Sign Up as Customer!") %>
-<% end %>
+<div id="sign_up" class="form">
+	<%= form_for @user do |n| %>
+	  <%= n.label(:email, "Email:") %>
+	  <%= n.email_field(:email) %><br>
+	  <%= n.label(:password, "Password:") %>
+	  <%= n.password_field(:password) %><br>
+	  <%= n.label(:password_confirmation, "Confirm Password:") %>
+	  <%= n.password_field(:password_confirmation) %><br>
+	  <%= n.label(:company, "Company Name:") %>
+	  <%= n.text_field(:company) %><br>
+	  <%= n.label(:fname, "First Name:") %>
+	  <%= n.text_field(:fname) %><br>
+	  <%= n.label(:lname, "last Name:") %>
+	  <%= n.text_field(:lname) %><br><br>
+	  <%= n.submit("Sign Up as Captain!") %>
+	  <%= n.submit("Sign Up as Customer!") %>
+	<% end %>
+</div>

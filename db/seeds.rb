@@ -13,6 +13,7 @@
 User.create(fname: "Erin", lname: "Mahon", email: "erin@gmail.com", company: "Ahola Shipping", password_digest: "password", type: "Captain")
 User.create(fname: "Michael", lname: "Manwaring", email: "michael@gmail.com", company: "Quick Ship", password_digest: "password", type: "Captain")
 User.create(fname: "Jeff", lname: "Bowne", email: "jeff@gmail.com", company: "Bowne Shipping", password_digest: "password", type: "Captain")
+User.create(fname: "Colin", lname: "Mahon", email: "colin@gmail.com", company: "Colin's Shipping", password_digest: "password", type: "Captain")
 
 # Customers:
 
