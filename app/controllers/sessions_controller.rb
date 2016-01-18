@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
   def create
 	user = User.find_by_email(params[:email])
-	if user && user.authenticate(params[:password])
+	if user && user.password == params[:password]
 		session[:user_id] = user.id
 		redirect_to root_path, :notice => "Welcome back, #{user.fname}"
 	else
@@ -18,3 +18,5 @@ class SessionsController < ApplicationController
 	redirect_to root_path, :notice => "Successfully Logged Out"
   end
 end
+
+

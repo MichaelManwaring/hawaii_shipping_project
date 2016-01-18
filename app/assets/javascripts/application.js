@@ -19,3 +19,5 @@ $("#alert").show();
 setTimeout(function() { $("#alert").hide(); }, 3000);
 $("#notice").show();
 setTimeout(function() { $("#notice").hide(); }, 3000);
+
+

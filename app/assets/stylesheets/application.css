@@ -13,3 +13,62 @@
  *= require_tree .
  *= require_self
  */
+
+#landing_page {
+	background-image: url("islands_map.jpg");
+	background-repeat: no-repeat;
+	background-attachment: none;
+	background-size: 100%;
+	z-index: -1;
+}
+#logo {
+	width: 30%;
+	position: relative;
+}
+#fish {
+	width: 20%;
+	margin-bottom: -4%;
+	position: relative;
+	margin-left: 8%;
+}
+#header {
+	z-index: 1;
+	position: absolute;
+	background-color: #ffffff;
+}
+#sign_in {
+	text-align: right;
+	width: 30%;
+	float: right;
+	border: 2px solid black;
+}
+.title {
+	padding: 2px;
+	border: 2px solid black;
+}
+.form {
+	border: 2px solid black;
+	text-align: right;
+}
+#sign_up {
+	width: 50%;
+	margin-left: 25%;
+	padding: 10px;
+}
+#users_list {
+	border: 2px solid black;
+}
+#intro {
+	clear: both;
+	background-color: rgba(244, 244, 244, 0.8);
+	width: 600px;
+	margin: 0 auto;
+	border: 2px solid black;
+	margin-left: 25%;
+	padding: 10px;
+	padding-top: 10%;
+	/*position: absolute;*/
+	z-index: 2;
+}
+
+
