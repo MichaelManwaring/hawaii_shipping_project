@@ -1,2 +1,34 @@
-<h1>Routes#show</h1>
-<p>Find me in app/views/routes/show.html.erb</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%=link_to "Take Trip", trip_path(@trip), method: :get%>
+
+<% @jobs.each do |j| %>
+	<% if j.origin == @route.origin || j.destination == @route.destination %>
+		<% if j.origin == @route.stop || j.destination == @route.stop %>
+			<div class="job">
+			<%= content_tag :h3, j.job_name %> 
+			<%=link_to "Add to Trip", job_path(id: j.id), method: :get, remote: true %>
+			<% if j.origin == @route.origin && j.destination == @route.destination %>
+				<%= content_tag :h3, "Full Trip" %>
+			<% elsif j.origin == @route.stop %>
+				<%= content_tag :h3, "Second Half of route" %>
+			<% else %>
+				<%= content_tag :h3, "First Half of route" %>
+			<% end %>
+			<%= content_tag :h4, "$" + j.cost.to_s %>
+			<%= content_tag :h4, "Containers: " + j.containers_needed.to_s %>
+			<%= content_tag :p, "Cargo Description: " + j.cargo %>
+			<%= content_tag :h5, "by customer #{(User.find(j.user_id)).fname} from #{(User.find(j.user_id)).company}" %>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>

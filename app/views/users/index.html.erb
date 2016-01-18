@@ -8,7 +8,7 @@
 	<%= content_tag :h3, "Shipping order form" %>
 	<%= render 'jobs/form' %>
 <% else %>
-	<%= content_tag :h3, "The #{@user.company} fleet:"  %>
+	<%= content_tag :h3, "Currently Active Ships:"  %>
 	<%= render 'ships/shiplist' %>
 	<%= content_tag :h3, "Add a Ship to the #{@user.company} fleet!"  %>
 	<%= render 'ships/form' %>
