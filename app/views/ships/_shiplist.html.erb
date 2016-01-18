@@ -1,14 +1,16 @@
 <% Ship.all.each do |s| %> 
+	<div class="boat">
    <%= image_tag s.photo.url(:medium) %>
    <% if @current_user[:id] == s.user_id && @current_user.type == "Captain" %> 
 	  <%= content_tag :h4, "Part of the #{@user.company} fleet!" %>
    	  <%= link_to s.ship_name, ship_path(s) %>
+   	  <span>__________________</span>
       <%= link_to 'Delete',  {:controller => "ships", :action => 'destroy', :id => s.id}, :confirm => "Are you sure you want to delete this ship?", :method => :delete %> 
    <% else %>
 		<%= s.ship_name %>
 		<%=link_to "Follow", followships_path(ship_id: s.id), method: :post, remote: true %>
    <% end %>
-   <br>
+   </div>
 <% end %>
 
 

@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ div{
+ 	margin: 5px;
+ }
 
 #landing_page {
 	background-image: url("islands_map.jpg");
@@ -56,7 +59,10 @@
 	padding: 10px;
 }
 #users_list {
+	text-align: center;
 	border: 2px solid black;
+	/*overflow: scroll;*/
+	background-color: rgba(244, 244, 244, 0.8);
 }
 #intro {
 	clear: both;
@@ -70,5 +76,56 @@
 	/*position: absolute;*/
 	z-index: 2;
 }
+.alluser{
+	display: inline-block;
+	border: solid white;
+	margin: 15px;
+}
+.boat{
+	display: inline-block;
+	border: solid black;
+	margin: 15px;
+	padding: 10px;
+}
+.followships{
+	float: right;
+}
+#main {
+	clear: both;
+	background-color: rgba(244, 244, 244, 0.8);
+	width: 70%;
+	margin: 0 auto;
+	border: 2px solid black;
+	margin-left: 10%;
+	padding: 10px;
+	padding-top: 10%;
+	/*position: absolute;*/
+	z-index: 2;
+}
+.joblist{
+	height: 500px; 
+	width: 400px;
+	overflow: scroll;
+	float: left;
+	display: inline-block;
+}
+.newship{
+	float: left;
+	display: inline-block;
+}
+.bottombar{
+	clear:both;
+	width: 100%;
+}
+.allship{
 
-
+}
+.triroute{
+	/*display: inline-block;*/
+	float: left;
+	width: 30%;	
+}
+.scroller{	
+	height: 500px;
+	overflow: scroll;
+}

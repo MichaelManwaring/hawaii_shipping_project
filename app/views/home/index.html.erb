@@ -10,7 +10,7 @@
 
 	<div id="users_list">
 	<% @users.each do |u| %>
-	  <%= content_tag :h4, u.fname + ": " + u.type %>
+	  <%= content_tag :h2 , u.fname + ": " + u.type, class: "alluser" %>
 	<% end %>
 	</div>
 	
