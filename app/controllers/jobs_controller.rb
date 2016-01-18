@@ -27,6 +27,9 @@ class JobsController < ApplicationController
   end
 
   def show
+  	@job=Job.find(params[:id])
+  	@trip=Trip.last
+  	@trip.jobs.push(@job)
   end
 
   def edit

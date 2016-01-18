@@ -1,13 +1,26 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <%= content_tag :h1, @ship.ship_name + "'s possible Trips"%>
+<%= content_tag :h3, "Space available for " + @ship.container_space.to_s + " total containers"%>
+
 <br>
 <br>
 
 
 <% @routes.each do |r| %>
+	<div class="triroute">
 	<%= content_tag :h2, r.route_name %>
+	<%= link_to "Begin Trip", route_path(r) %>		 
+	<%= content_tag :h3, "Jobs available on this route:" %>
 	<% @jobs.each do |j| %>
 		<% if j.origin == r.origin || j.destination == r.destination %>
 			<% if j.origin == r.stop || j.destination == r.stop %>
+				<div class="job_on_route">
 				<%= content_tag :h3, j.job_name %> 
 				<% if j.origin == r.origin && j.destination == r.destination %>
 					<%= content_tag :h3, "Full Trip" %>
@@ -15,13 +28,14 @@
 					<%= content_tag :h3, "Second Half of route" %>
 				<% else %>
 					<%= content_tag :h3, "Second Half of route" %>
-				<% end %>			 
+				<% end %>
 				<%= content_tag :h4, "$" + j.cost.to_s %>
 				<%= content_tag :h4, "Containers: " + j.containers_needed.to_s %>
 				<%= content_tag :p, "Cargo Description: " + j.cargo %>
 				<%= content_tag :h5, "by customer #{(User.find(j.user_id)).fname} from #{(User.find(j.user_id)).company}" %>
+				</div>
 			<% end %>
 		<% end %>
 	<% end %>
-	<br>
+	</div>
 <% end %>

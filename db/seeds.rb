@@ -23,7 +23,12 @@ User.create(fname: "Michael", lname: "Stafford", email: "michael@gmail.com", com
 User.create(fname: "Natalie", lname: "Navarre", email: "natalie@gmail.com", company: "Building Suppliers", password: "password", type: "Customer")
 User.create(fname: "Timmy", lname: "Ahola", email: "timmy@aloha.com", company: "Timmy's Hawaiian Shirts", password: "qwerty", type: "Customer")
 
+# Ships
 
+Ship.create(user_id: 0,ship_name: "Rumplestiltskin", container_space: 100, current_location: 1)
+Ship.create(user_id: 1,ship_name: "Boat", container_space: 100, current_location: 0)
+Ship.create(user_id: 2,ship_name: "Essence", container_space: 100, current_location: 4)
+Ship.create(user_id: 3,ship_name: "Whats a good boat name?", container_space: 100, current_location: 3)
 
 #route creation using creation method defined in model
 # first set of routes travel from big island to big island with a stop midway at a small island

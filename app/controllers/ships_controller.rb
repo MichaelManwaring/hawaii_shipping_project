@@ -13,13 +13,13 @@ class ShipsController < ApplicationController
   	puts "*********************"
   	@current_user = current_user
   	@ship = Ship.new(ship_params)
-  	@current_user.ships.push(@ship)
+  	@ship.user_id = @current_user.id
 	  	if @ship.save()
 	  		flash[:alert] = "Ship Saved!"
 	  	else
 			  flash[:alert] = "Could Not Save Ship"
 	  	end
-	 redirect_to users_path
+	 redirect_to root_path
   end
 
   def new
@@ -28,7 +28,7 @@ class ShipsController < ApplicationController
   end
 
   def show
-  	@ship = Ship.find(params[:id])
+    @ship = Ship.find(params[:id])
     @routes = []
     Route.all.each do |r| 
       if r.origin == @ship.current_location
@@ -36,6 +36,8 @@ class ShipsController < ApplicationController
       end
     end
     @jobs=Job.all
+    @trip=Trip.create(status: 0)
+    @ship.trips.push(@trip)
   end
 
   def update
