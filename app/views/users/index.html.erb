@@ -1,33 +1,43 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div id="landing_page">
+	<div id="main">
+		<%= content_tag :h2, "You are logged in as #{@user.type} #{@user.fname}" %>
+		<%= flash[:alert] %>
 
-<%= content_tag :h2, "You are logged in as #{@user.type} #{@user.fname}" %>
-<%= flash[:alert] %>
+		<% if @user.type == 'Customer' %>
+			<%= content_tag :h3, "Shipping order form" %>
+			<%= render 'jobs/form' %>
+		<% else %>
+			<div class="allship">
+			<%= content_tag :h3, "Currently Active Ships:"  %>
+			<%= render 'ships/shiplist' %>
+			</div>
+			<div class="newship">
+			<%= content_tag :h3, "Add a Ship to the #{@user.company} fleet!"  %>
+			<%= render 'ships/form' %>
+			</div>
+			<div class="followships">
+			<%= content_tag :h3, "Ships you follow"  %>
+			<%= render 'ships/followships' %>
+			</div>
+		<% end %>
+		<%= content_tag :h3, "The Job Board"  %>
+		<div class="joblist">
+		<%= render 'jobs/joblist' %>
+		</div>
 
-<% if @user.type == 'Customer' %>
-	<%= content_tag :h3, "Shipping order form" %>
-	<%= render 'jobs/form' %>
-<% else %>
-	<%= content_tag :h3, "Currently Active Ships:"  %>
-	<%= render 'ships/shiplist' %>
-	<%= content_tag :h3, "Add a Ship to the #{@user.company} fleet!"  %>
-	<%= render 'ships/form' %>
-	<%= content_tag :h3, "Ships you follow"  %>
-	<%= render 'ships/followships' %>
-<% end %>
-<%= content_tag :h3, "The Job Board"  %>
-<%= render 'jobs/joblist' %>
 
 
+		<!-- if current user is logged in as captian  -->
+		<% if @current_user && @current_user.type == "Captain" %> 
 
-<!-- if current user is logged in as captian  -->
-<% if @current_user && @current_user.type == "Captain" %> 
 
+		<% end %>
+		<div class="bottombar">
+		<h1>Edit User</h1>
+		<%= render 'users/edit' %>
 
-<% end %>
-
-<h1>Edit User</h1>
-<%= render 'users/edit' %>
-
-<%= link_to "Log Out", session_path(@user), method: :delete %>
-<%= link_to "Delete Your Account", user_path(@user), method: :delete %>
+		<%= link_to "Log Out", session_path(@user), method: :delete %>
+		<%= link_to "Delete Your Account", user_path(@user), method: :delete %>
+		</div>
+	</div>
+</div>

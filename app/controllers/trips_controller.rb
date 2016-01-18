@@ -13,8 +13,9 @@ class TripsController < ApplicationController
 
   def show
   	@trip=Trip.find(params[:id])
-  	@trip.status=2
-  	
+  	@trip.status=1
+  	@trip.save
+  	@user=current_user
   end
 
   def edit

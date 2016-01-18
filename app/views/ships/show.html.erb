@@ -1,8 +1,15 @@
-<br>
-<br>
-<br>
-<br>
-<br>
+<div id="landing_page">
+	<div id="main">
+<%= content_tag :h1, @ship.ship_name + "'s past Trips"%>
+<% @ship.trips.each do |t| %>
+	<% if t.status == 1 %>
+		<%= t.route.route_name %>
+		<% t.jobs.each do |j| %>
+			$<%= j.cost %>
+		<% end %> 
+	<% end %>
+<% end %>
+
 <br>
 <br>
 <%= content_tag :h1, @ship.ship_name + "'s possible Trips"%>
@@ -15,8 +22,9 @@
 <% @routes.each do |r| %>
 	<div class="triroute">
 	<%= content_tag :h2, r.route_name %>
-	<%= link_to "Begin Trip", route_path(r) %>		 
+	<%= link_to "Begin Trip", route_path(r) %>
 	<%= content_tag :h3, "Jobs available on this route:" %>
+	<div class="scroller">
 	<% @jobs.each do |j| %>
 		<% if j.origin == r.origin || j.destination == r.destination %>
 			<% if j.origin == r.stop || j.destination == r.stop %>
@@ -37,5 +45,8 @@
 			<% end %>
 		<% end %>
 	<% end %>
+	</div>		 
 	</div>
 <% end %>
+</div>
+</div>
