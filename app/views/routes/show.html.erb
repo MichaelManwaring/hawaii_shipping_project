@@ -1,6 +1,7 @@
 <div id="landing_page">
 	<div id="main">
-<%=link_to "Take Trip", trip_path(@trip), method: :get%>
+
+<div class="trip"><%=link_to "Take Trip", trip_path(@trip), method: :get%></div>
 
 <% @jobs.each do |j| %>
 	<% if j.origin == @route.origin || j.destination == @route.destination %>
