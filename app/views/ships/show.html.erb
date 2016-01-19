@@ -1,14 +1,18 @@
 <div id="landing_page">
 	<div id="main">
 <%= content_tag :h1, @ship.ship_name + "'s past Trips"%>
+<ul>
 <% @ship.trips.each do |t| %>
 	<% if t.status == 1 %>
+	<li>
 		<%= t.route.route_name %>
 		<% t.jobs.each do |j| %>
 			$<%= j.cost %>
 		<% end %> 
+	</li>
 	<% end %>
 <% end %>
+</ul>
 
 <br>
 <br>
