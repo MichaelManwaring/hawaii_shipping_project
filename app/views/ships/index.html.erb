@@ -1,9 +1,8 @@
-<h1>Ships#index</h1>
-<p>Find me in app/views/ships/index.html.erb</p>
-
-<% Ship.all.each do |s| %>
-   <%= s.ship_name %> |
-   <% if @user = current_user %>
-      <%= link_to 'Delete',  {:controller => "ships", :action => 'destroy', :id => s.id}, :confirm => "Are you sure you want to delete this ship?", :method => :delete %> <br>
+<% if s.user_id == @current_user.id %>
+	<% Ship.all.each do |s| %>
+   	  	<%= s.ship_name %> 
+      	<%= s.user_id.company %>
+      	<%= link_to 'Delete',  {:controller => "ships", :action => 'destroy', :id => s.id}, :confirm => "Are you sure you want to delete this ship?", :method => :delete %> <br>
+      	<%= link_to 'Show',  {:controller => "ships", :action => 'show', :id => s.id} %>
    <% end %>
 <% end %>

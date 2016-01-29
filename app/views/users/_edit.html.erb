@@ -1,15 +1,17 @@
-<%= form_for @user, url: user_path(@user), method: :put do |n| %>
-  <%= n.label(:email, "Email:") %>
-  <%= n.email_field(:email) %>
-  <%= n.label(:password, "Password:") %>
-  <%= n.password_field(:password) %>
-  <%= n.label(:password_confirmation, "Confirm Password:") %>
-  <%= n.password_field(:password_confirmation) %>
-  <%= n.label(:company, "Company Name:") %>
-  <%= n.text_field(:company) %>
-  <%= n.label(:fname, "First Name:") %>
-  <%= n.text_field(:fname) %>
-  <%= n.label(:lname, "last Name:") %>
-  <%= n.text_field(:lname) %>
-  <%= n.submit("Edit Profile") %>
-<% end %>
+<div class="form">
+	<%= form_for @user, url: user_path(@user), method: :put do |n| %>
+	  <span class="label"><%= n.label(:email, "Email:") %></span>
+	  <%= n.email_field(:email) %><br>
+	  <span class="label"><%= n.label(:password, "Password:") %></span>
+	  <%= n.password_field(:password) %><br>
+	  <span class="label"><%= n.label(:password_confirmation, "Confirm Password:") %></span>
+	  <%= n.password_field(:password_confirmation) %><br>
+	  <span class="label"><%= n.label(:company, "Company Name:") %></span>
+	  <%= n.text_field(:company) %><br>
+	  <span class="label"><%= n.label(:fname, "First Name:") %></span>
+	  <%= n.text_field(:fname) %><br>
+	  <span class="label"><%= n.label(:lname, "last Name:") %><span>
+	  <%= n.text_field(:lname) %><br>
+	  <%= n.submit("Edit Profile") %>
+	<% end %>
+</div>

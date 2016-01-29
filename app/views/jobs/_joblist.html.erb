@@ -1,13 +1,17 @@
+
 <% Job.all.each do |j| %>
-   <% if @current_user.type == "Captain" %>
-	   <%= content_tag :h3, j.job_name %> 
-	   <%= content_tag :h4, "$" + j.cost.to_s %>
-	   <%= content_tag :h5, "by customer #{(User.find(j.user_id)).fname} from #{(User.find(j.user_id)).company}" %>
-   	  <br>
-   <% elsif @current_user[:id] == j.user_id && @current_user.type == "Customer" %> 
-	   <%= content_tag :h3, "Your Jobs" %>
-   	  <%= j.job_name %> 
-      <%= link_to 'Delete',  {:controller => "jobs", :action => 'destroy', :id => j.id}, :confirm => "Are you sure you want to delete this job?", :method => :delete %> 
-   	  <br>
-   <% end %>
+   <div class="job_list">
+      <% if @current_user.type == "Captain" %>
+   	   <%= content_tag :h3, j.job_name %> 
+   	   <%= content_tag :h4, "$" + j.cost.to_s %>
+   	   <%= content_tag :h5, "by customer #{(User.find(j.user_id)).fname} from #{(User.find(j.user_id)).company}" %>
+      	  <br>
+      <% elsif @current_user[:id] == j.user_id && @current_user.type == "Customer" %> 
+   	   <%= content_tag :h3, "Your Jobs" %>
+      	  <%= j.job_name %> 
+         <%= link_to 'Delete',  {:controller => "jobs", :action => 'destroy', :id => j.id}, :confirm => "Are you sure you want to delete this job?", :method => :delete %> 
+      	  <br>
+      <% end %>
+    </div>
 <% end %>
+

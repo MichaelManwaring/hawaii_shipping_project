@@ -1,43 +1,41 @@
-<div id="landing_page">
-	<div id="main">
-		<%= content_tag :h2, "You are logged in as #{@user.type} #{@user.fname}" %>
-		<%= flash[:alert] %>
-
+<div class="container">
+	<div class="account_section">
+		<div class="header">
+			<%= content_tag :h2, "#{@user.company} Account Information" %>
+			<span class="log_out"><%= link_to "Log Out", session_path(@user), method: :delete %></span>
+		</div>
+		<div class="account">
+			<%= content_tag :h3, "Edit Account Information" %>
+			<div class="edit_info">
+				<%= render 'users/edit' %>
+			</div><br>
+			<%= link_to "Delete Your Account", user_path(@user), method: :delete %>
+		</div>
 		<% if @user.type == 'Customer' %>
-			<%= content_tag :h3, "Shipping order form" %>
-			<%= render 'jobs/form' %>
+			<div class="new_form">
+				<%= content_tag :h3, "Shipping order form" %>
+				<%= render 'jobs/form' %>
+			</div>
 		<% else %>
-			<div class="allship">
-			<%= content_tag :h3, "Currently Active Ships:"  %>
-			<%= render 'ships/shiplist' %>
+			<div class="new_form">
+				<%= content_tag :h3, "Add a Ship to the #{@user.company} fleet!"  %>
+				<%= render 'ships/form' %>
 			</div>
-			<div class="newship">
-			<%= content_tag :h3, "Add a Ship to the #{@user.company} fleet!"  %>
-			<%= render 'ships/form' %>
-			</div>
-			<div class="followships">
-			<%= content_tag :h3, "Ships you follow"  %>
-			<%= render 'ships/followships' %>
-			</div>
-		<% end %>
-		<%= content_tag :h3, "The Job Board"  %>
+		</div>
+		<div class="allship">
+			<%= content_tag :h3, "#{@user.company}'s Fleet:"  %>
+			<ul>
+				<li><%= render 'ships/shiplist' %></li>
+			</ul>
+		</div>
 		<div class="joblist">
-		<%= render 'jobs/joblist' %>
+			<%= content_tag :h3, "The Job Board"  %>
+			<%= render 'jobs/joblist' %>
 		</div>
-
-
-
-		<!-- if current user is logged in as captian  -->
-		<% if @current_user && @current_user.type == "Captain" %> 
-
-
+		<div class="followships">
+			<%= content_tag :h3, "Ships you follow"  %>
+			<%= render 'ships/followships' %> 
+		</div>	
 		<% end %>
-		<div class="bottombar">
-		<h1>Edit User</h1>
-		<%= render 'users/edit' %>
-
-		<%= link_to "Log Out", session_path(@user), method: :delete %>
-		<%= link_to "Delete Your Account", user_path(@user), method: :delete %>
-		</div>
-	</div>
 </div>
+	

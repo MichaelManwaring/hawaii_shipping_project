@@ -1,18 +1,18 @@
-<div id="sign_up" class="form">
+<div class="form">
 	<%= form_for @user do |n| %>
-	  <%= n.label(:email, "Email:") %>
+	  <span class="label"><%= n.label(:email, "Email:") %></span>
 	  <%= n.email_field(:email) %><br>
-	  <%= n.label(:password, "Password:") %>
+	  <span class="label"><%= n.label(:password, "Password:") %></span>
 	  <%= n.password_field(:password) %><br>
-	  <%= n.label(:password_confirmation, "Confirm Password:") %>
+	  <span class="label"><%= n.label(:password_confirmation, "Confirm Password:") %></span>
 	  <%= n.password_field(:password_confirmation) %><br>
-	  <%= n.label(:company, "Company Name:") %>
+	  <span class="label"><%= n.label(:company, "Company Name:") %></span>
 	  <%= n.text_field(:company) %><br>
-	  <%= n.label(:fname, "First Name:") %>
+	  <span class="label"><%= n.label(:fname, "First Name:") %></span>
 	  <%= n.text_field(:fname) %><br>
-	  <%= n.label(:lname, "last Name:") %>
+	  <span class="label"><%= n.label(:lname, "last Name:") %></span>
 	  <%= n.text_field(:lname) %><br><br>
-	  <%= n.submit("Sign Up as Captain!") %>
+	  <span class="label"><%= n.submit("Sign Up as Captain!") %></span>
 	  <%= n.submit("Sign Up as Customer!") %>
 	<% end %>
 </div>

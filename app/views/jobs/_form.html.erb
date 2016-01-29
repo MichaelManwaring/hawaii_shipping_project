@@ -1,15 +1,17 @@
-<%= form_for @job do |n| %>
-  <%= n.label(:origin, "Shipping From:") %>
-  <%= n.select :origin, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %>
-  <%= n.label(:destination, "Shipping to:") %>
-  <%= n.select :destination, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %>
-  <%= n.label(:job_name, "Job Name:") %>
-  <%= n.text_field(:job_name) %>
-  <%= n.label(:containers_needed, "Containers Needed:") %>
-  <%= n.number_field(:containers_needed) %>
-  <%= n.label(:cargo, "Description of Cargo:") %>
-  <%= n.text_field(:cargo) %>
-  <%= n.label(:delivery_by, "Deliver By:") %>
-  <%= n.date_field(:delivery_by) %>
-  <%= n.submit("Create Job Order!") %>
-<% end %>
+<div class="form">
+	<%= form_for @job do |n| %>
+	  <span class="label"><%= n.label(:origin, "Shipping From:") %></span>
+	  <%= n.select :origin, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %><br>
+	  <span class="label"><%= n.label(:destination, "Shipping to:") %></span>
+	  <%= n.select :destination, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %><br>
+	  <span class="label"><%= n.label(:job_name, "Job Name:") %></span>
+	  <%= n.text_field(:job_name) %><br>
+	  <span class="label"><%= n.label(:containers_needed, "Containers Needed:") %></span>
+	  <%= n.number_field(:containers_needed) %><br>
+	  <span class="label"><%= n.label(:cargo, "Description of Cargo:") %></span>
+	  <%= n.text_field(:cargo) %><br>
+	  <span class="label"><%= n.label(:delivery_by, "Deliver By:") %></span>
+	  <%= n.date_field(:delivery_by) %><br>
+	  <%= n.submit("Create Job Order!") %>
+	<% end %>
+</div>
