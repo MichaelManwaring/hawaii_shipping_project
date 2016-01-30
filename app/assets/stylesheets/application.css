@@ -17,13 +17,11 @@
 li {
 	list-style-type: none;
 }
-
  body {
  	background-color: teal;
  	font-family: Helvetica;
  	font-weight: lighter;
- }
-
+}
 a:link, a:visited {
  	text-decoration: none;
  	text-transform: uppercase;
@@ -34,21 +32,16 @@ a:link, a:visited {
  	font-weight: bold;
  	letter-spacing: 0.1em;
  	padding: 5px;
- }
-
+}
 a:hover {
     color: #ffab67;
 }
-
-/* selected link */
 a:active {
     color: blue;
 }
-
  div {
  	margin: 5px;
- }
-
+}
 #landing_page {
 	background-image: url("islands_map.jpg");
 	background-repeat: no-repeat;
@@ -67,7 +60,7 @@ a:active {
 	margin-left: 8%;
 }
 #header {
-	z-index: 1;
+	z-index: 0;
 	position: fixed;
 	background-color: #ffffff;
 }
@@ -76,20 +69,22 @@ a:active {
 	width: 30%;
 	float: right;
 }
-h2, h3 {
+h1, h2, h3, h4, p {
 	text-align: center;
 	font-weight: normal;
 	letter-spacing: 0.15em;
 	color:#ffffff;
 }
-
-h3 {
+h3, h4, p {
 	color: #124678;
 }
-.title {
-	/*padding: 2px;*/
-	/*border: 2px solid black;*/
+p {
+	font-size: 0.9em;
+	font-weight: bold;
 }
+ h4 {
+ 	font-size: 1.5em;
+ }
 .form {
 	border: 2px solid black;
 	text-align: right;
@@ -99,28 +94,24 @@ h3 {
 	margin-left: 25%;
 	padding: 10px;
 }
-#users_list {
-	text-align: center;
-	border: 2px solid black;
-	/*overflow: scroll;*/
-	background-color: rgba(244, 244, 244, 0.8);
-}
 #intro {
 	clear: both;
-	background-color: rgba(244, 244, 244, 0.8);
+	background-color: rgba(0, 159, 178, 0.9);
 	width: 600px;
 	margin: 0 auto;
 	border: 2px solid black;
-	margin-left: 25%;
 	padding: 10px;
 	padding-top: 10%;
-	/*position: absolute;*/
 	z-index: 2;
 }
 .alluser{
 	display: inline-block;
-	border: solid white;
+	border: solid #124678;
 	margin: 15px;
+	color: #124678;
+	padding: 1px;
+	font-size: 1.25em;
+	overflow: scroll;
 }
 .boat{
 	display: inline-block;
@@ -129,6 +120,7 @@ h3 {
 	/*float: left;*/
 	height: 300px;
 	overflow: scroll;
+	padding: 1%;
 
 }
 .followships{
@@ -142,10 +134,10 @@ h3 {
 	background-color: rgba(244, 244, 244, 0.8);
 	width: 70%;
 	margin: 0 auto;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 	margin-left: 10%;
 	padding: 10px;
-	padding-top: 10%;
+	padding-top: 2%;
 	/*position: absolute;*/
 	z-index: 2;
 }
@@ -169,7 +161,6 @@ h3 {
 }
 .allship{
 	border: 10px solid  #124678;
-	width: 50%;
 	float: left;
 	height: 500px; 
 	width: 100%;
@@ -214,15 +205,11 @@ h3 {
 	padding: 1%;
 	text-transform: uppercase;
 	color: #ffffff;
+	height: 100%l
 }
 .log_out {
 	float: right;
 	width: 100%;
-}
-.account_section {
-	border: 2px solid black;
-	width: 100%;
-	/*background-color: red;*/
 }
 .account {
 	background-color: rgba(0, 159, 178, 0.8);
@@ -273,10 +260,6 @@ footer {
 	font-size: 1em;
 	font-weight: lighter;
 }
-.field {
-	/*margin: 2%;*/
-}
-
 .ship_name {
 	margin: 1%;
 	text-transform: uppercase;
@@ -290,7 +273,22 @@ footer {
 	font-weight: bold;
 	font-size: 1.5em;
 }
-
 .scroller {
 	background-color: white;
+}
+#users_list {
+	text-align: center;
+	/*border: 2px solid black;*/
+	overflow: scroll;
+	background-color: rgba(244, 244, 244, 0.8);
+	color: #124678;
+}
+
+#notice, #alert {
+	background-color: #ffab67;
+	color: #ffffff;
+	z-index: 5;
+	position: absolute;
+	margin-left: 40%;
+	font-size: 1.25em;
 }

@@ -14,6 +14,7 @@ User.create(fname: "Erin", lname: "Mahon", email: "erin@gmail.com", company: "Ah
 User.create(fname: "Mike", lname: "Manwaring", email: "mike@gmail.com", company: "Quick Ship", password: "password", type: "Captain")
 User.create(fname: "Jeff", lname: "Bowne", email: "jeff@gmail.com", company: "Bowne Shipping", password: "password", type: "Captain")
 User.create(fname: "Jimmy", lname: "Internet", email: "jimmy@internet.com", company: "Internet by Boat", password: "qwerty", type: "Captain")
+User.create(fname: "Steve", lname: "Stafford", email: "steve@gmail.com", company: "Steve's Boatz", password: "password", type: "Captain")
 
 
 # Customers:

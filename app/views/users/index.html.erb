@@ -13,17 +13,18 @@
 		</div>
 		<% if @user.type == 'Customer' %>
 			<div class="new_form">
-				<%= content_tag :h3, "Shipping order form" %>
+				<%= content_tag :h3, "Shipping Order Form" %>
 				<%= render 'jobs/form' %>
 			</div>
 		<% else %>
 			<div class="new_form">
-				<%= content_tag :h3, "Add a Ship to the #{@user.company} fleet!"  %>
+				<%= content_tag :h3, "Add a Ship to the #{@user.company} Fleet!"  %>
 				<%= render 'ships/form' %>
 			</div>
 		</div>
 		<div class="allship">
 			<%= content_tag :h3, "#{@user.company}'s Fleet:"  %>
+			<%= content_tag :p, "To Begin a New Trip, or View Previous Trips, Please View Boat 'Info' Below" %>
 			<ul>
 				<li><%= render 'ships/shiplist' %></li>
 			</ul>
