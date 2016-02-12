@@ -9,16 +9,25 @@
 <body>
 	<div id="header">
 		<%= link_to image_tag("logo.png", id: "logo") %>
-		<%= link_to image_tag("reef-triggerfish.png", id: "fish"), root_path %>
-		<div id="sign_in">
-			<%= render 'sessions/form' %>
-		</div>
+		<img id ="fish" src="/assets/reef-triggerfish.png">
+		<nav>
+			<% if current_user %>
+				<%= link_to "Index", users_path %>
+				<span class="greeting">Hello <%= current_user.type %> <%= current_user.fname %>!</span>
+			<% else %>
+				<div id="sign_in">
+					<%= render 'sessions/form' %>
+				</div>
+			<% end %>
+		</nav>
 	</div>
-
-
-<div id="notice"><%= flash[:notice] if flash[:notice] %></div>
-<div id="alert"><%= flash[:alert] if flash[:alert] %></div>
-
-<%= yield %>
-
+	<div>
+		<div id="notice"><%= flash[:notice] if flash[:notice] %></div>
+		<div id="alert"><%= flash[:alert] if flash[:alert] %></div>
+	    <%= yield %>
+	</div>
+	<footer>
+	</footer>
 </body>
+</html>
+

@@ -13,10 +13,35 @@
  *= require_tree .
  *= require_self
  */
- div{
- 	margin: 5px;
- }
 
+li {
+	list-style-type: none;
+}
+ body {
+ 	background-color: teal;
+ 	font-family: Helvetica;
+ 	font-weight: lighter;
+}
+a:link, a:visited {
+ 	text-decoration: none;
+ 	text-transform: uppercase;
+ 	background-color: #ffffff;
+ 	color: #fb7507;
+ 	/*border: 2px solid #dddddd;*/
+ 	font-size: 1em;
+ 	font-weight: bold;
+ 	letter-spacing: 0.1em;
+ 	padding: 5px;
+}
+a:hover {
+    color: #ffab67;
+}
+a:active {
+    color: blue;
+}
+ div {
+ 	margin: 5px;
+}
 #landing_page {
 	background-image: url("islands_map.jpg");
 	background-repeat: no-repeat;
@@ -35,20 +60,31 @@
 	margin-left: 8%;
 }
 #header {
-	z-index: 1;
-	position: absolute;
+	z-index: 0;
+	position: fixed;
 	background-color: #ffffff;
 }
 #sign_in {
 	text-align: right;
 	width: 30%;
 	float: right;
-	border: 2px solid black;
 }
-.title {
-	padding: 2px;
-	border: 2px solid black;
+h1, h2, h3, h4, p {
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 0.15em;
+	color:#ffffff;
 }
+h3, h4, p {
+	color: #124678;
+}
+p {
+	font-size: 0.9em;
+	font-weight: bold;
+}
+ h4 {
+ 	font-size: 1.5em;
+ }
 .form {
 	border: 2px solid black;
 	text-align: right;
@@ -58,66 +94,78 @@
 	margin-left: 25%;
 	padding: 10px;
 }
-#users_list {
-	text-align: center;
-	border: 2px solid black;
-	/*overflow: scroll;*/
-	background-color: rgba(244, 244, 244, 0.8);
-}
 #intro {
 	clear: both;
-	background-color: rgba(244, 244, 244, 0.8);
+	background-color: rgba(0, 159, 178, 0.9);
 	width: 600px;
 	margin: 0 auto;
 	border: 2px solid black;
-	margin-left: 25%;
 	padding: 10px;
 	padding-top: 10%;
-	/*position: absolute;*/
 	z-index: 2;
 }
 .alluser{
 	display: inline-block;
-	border: solid white;
+	border: solid #124678;
 	margin: 15px;
+	color: #124678;
+	padding: 1px;
+	font-size: 1.25em;
+	overflow: scroll;
 }
 .boat{
 	display: inline-block;
-	border: solid black;
-	margin: 15px;
-	padding: 10px;
+	background-color: #d6dfe1;
+	width: 30%;
+	/*float: left;*/
+	height: 300px;
+	overflow: scroll;
+	padding: 1%;
+
 }
 .followships{
-	float: right;
+	float: left;
+	width: 30%;
+	background-color: #dddddd;
+	border: 10px solid #124678; 
 }
 #main {
 	clear: both;
 	background-color: rgba(244, 244, 244, 0.8);
 	width: 70%;
 	margin: 0 auto;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 	margin-left: 10%;
 	padding: 10px;
-	padding-top: 10%;
+	padding-top: 2%;
 	/*position: absolute;*/
 	z-index: 2;
 }
 .joblist{
-	height: 500px; 
-	width: 400px;
+	height: 400px;
+	width: 60%;
 	overflow: scroll;
 	float: left;
 	display: inline-block;
+	background-color: #74838b;
+	padding: 2%;
 }
 .newship{
-	float: left;
+	/*float: left;*/
 	display: inline-block;
+	width: 30%;
 }
 .bottombar{
 	clear:both;
 	width: 100%;
 }
 .allship{
+	border: 10px solid  #124678;
+	float: left;
+	height: 500px; 
+	width: 100%;
+	overflow: scroll;
+	background-color: white;
 
 }
 .triroute{
@@ -131,4 +179,116 @@
 }
 .trip{
 	text-align: center;
+}
+
+.new_job {
+	/*padding: 4px;*/
+	width: 100%;
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 10%;
+	/*background-color: #dddddd;*/
+	height: 100%;
+}
+.index {
+	/*background-color: #dddddd;
+	height: 100%;*/
+}
+.header {
+	background-color: #124678;
+	display: inline-block;
+	float: left;
+	width: 100%;
+	padding: 1%;
+	text-transform: uppercase;
+	color: #ffffff;
+	height: 100%l
+}
+.log_out {
+	float: right;
+	width: 100%;
+}
+.account {
+	background-color: rgba(0, 159, 178, 0.8);
+	width: 40%;
+	float: left;
+	padding: 2%;
+}
+.edit_info {
+	width: 100%;
+	float: left;
+}
+.new_form {
+	float: left;
+	width: 50%;
+	padding: 2%;
+	background-color: rgba(153, 203, 246, 0.8);
+	margin-left: 0.5%;
+}
+
+footer {
+	clear: both;
+	height: 100px;
+	width: 100%;
+	background-color: #124678;
+}
+.job_list {
+	width: 20%;
+	display: inline-block;
+	float: left;
+	background-color: rgba(153, 203, 246, 0.8);
+	border: 4px solid #d6dfe1; 
+	padding: 1%;
+	height: 200px;
+	overflow: scroll;
+	text-align: center;
+}
+.form {
+	text-align: right;
+	width: 70%;
+	background-color: #d6dfe1;
+	padding: 5% 10% 2% 2%;
+	margin: 10%;
+}
+.label {
+	color: #000000;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-size: 1em;
+	font-weight: lighter;
+}
+.ship_name {
+	margin: 1%;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.greeting {
+	float: right;
+	color: #124678;
+	/*margin: 1%;*/
+	padding: 1%;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.scroller {
+	background-color: white;
+}
+#users_list {
+	text-align: center;
+	/*border: 2px solid black;*/
+	overflow: scroll;
+	background-color: rgba(244, 244, 244, 0.8);
+	color: #124678;
+}
+
+#notice, #alert {
+	background-color: #ffab67;
+	color: #ffffff;
+	z-index: 5;
+	position: absolute;
+	margin-left: 40%;
+	font-size: 1.25em;
 }

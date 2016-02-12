@@ -1,12 +1,13 @@
-<%= form_for @ship, :url => ships_path, :html => { :multipart => true } do |f| %>
-	<%= f.label :ship_name %> <br>
-	<%= f.text_field :ship_name %> <br>
-	<%= f.label :container_space %> <br>
-	<%= f.number_field :container_space %> <br>
-	<%= f.label :current_location %> <br>
-  	<%= f.select :current_location, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %><br>
-  	<%= f.label :ship_photo %> <br>
-	<%= f.file_field :photo %> <br>
-	<%= f.submit :create %> 
-<% end %>
-
+<div class="form">
+	<%= form_for @ship, :url => ships_path, :html => { :multipart => true } do |f| %>
+		<span class="label"><%= f.label :ship_name %></span>
+		<span class="field"><%= f.text_field :ship_name %></span><br>
+		<span class="label"><%= f.label :container_space %></span>
+		<span class="field"><%= f.number_field :container_space %><span><br>
+		<span class="label"><%= f.label :current_location %></span>
+	  	<%= f.select :current_location, options_for_select([["Hawaii",0],["Maui",1], ["Lanai",2], ["Moloka'i",3], ["Honolulu",4], ["Kuai",5]]) %><br><br>
+	  	<span class="label"><%= f.label :ship_photo %></span>
+		<span class="field"><%= f.file_field :photo %></span><br><br>
+		<div class="button"><%= f.submit :create %></div>
+	<% end %>
+</div>

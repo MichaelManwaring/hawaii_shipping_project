@@ -19,8 +19,8 @@ class ShipsController < ApplicationController
 	  	else
 			  flash[:alert] = "Could Not Save Ship"
 	  	end
-	 redirect_to root_path
-  end
+    redirect_to root_path
+  end 
 
   def new
   	@ship = Ship.new

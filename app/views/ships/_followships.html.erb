@@ -1,5 +1,7 @@
 <ul>
 <% @user.followships.all.each do |f| %>
-   <li><%= (Ship.find(f.ship_id)).ship_name %></li> 
+   <li class="ship_name"><%= (Ship.find(f.ship_id)).ship_name %>
+   			<%= link_to 'Info',  {:controller => "ships", :action => 'show', :id => f.ship_id} %>
+   </li> 
 <% end %>
 </ul>
