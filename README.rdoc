@@ -1,10 +1,10 @@
 == README
 
-This project was an assignment for NYCDA Web Development intensive, the central piece of the assignment was to create a rich join table which was achieved here through a `Trip` model which joins `Routes` and `Ships` while having `Jobs` of its own.
+This project was an assignment for NYCDA Web Development intensive, the central piece of the assignment was to create a rich join table which was achieved here through a <tt>Trip</tt> model which joins <tt>Routes</tt> and <tt>Ships</tt> while having <tt>Jobs</tt> of its own.
 
 
 
-To use the Humuhumunukunukuapua'a shipping app, clone this repository, run `rake db:migrate db:seed` and run Rails Server with `rails s`. 
+To use the Humuhumunukunukuapua'a shipping app, clone this repository, run <tt>rake db:migrate db:seed</tt> and run Rails Server with <tt>rails s</tt>. 
 
 When the site has booted on localhost:3000, you can sign in as a captain or a customer. Customers have a very limited experience, only being able to create jobs (minimum 8 containers and with a description at least 50 characters).
 
