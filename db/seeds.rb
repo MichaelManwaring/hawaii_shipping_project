@@ -26,10 +26,10 @@ User.create(fname: "Timmy", lname: "Ahola", email: "timmy@aloha.com", company: "
 
 # Ships
 
-Ship.create(user_id: 4,ship_name: "Rumplestiltskin", container_space: 100, current_location: 1, photo_file_name: "boat_1.jpg")
-Ship.create(user_id: 1,ship_name: "Boat", container_space: 100, current_location: 0, photo_file_name: "boat_2.jpg")
-Ship.create(user_id: 2,ship_name: "Essence", container_space: 100, current_location: 4, photo_file_name: "boat_3.png")
-Ship.create(user_id: 3,ship_name: "Whats a good boat name?!", container_space: 100, current_location: 3, photo_file_name: "boat_1.jpg")
+Ship.create(user_id: 4, ship_name: "Rumplestiltskin", container_space: 100, current_location: 1, photo_file_name: "boat_1.jpg")
+Ship.create(user_id: 1, ship_name: "Boat", container_space: 100, current_location: 0, photo_file_name: "boat_2.jpg")
+Ship.create(user_id: 2, ship_name: "Essence", container_space: 100, current_location: 4, photo_file_name: "boat_3.png")
+Ship.create(user_id: 3, ship_name: "Whats a good boat name?!", container_space: 100, current_location: 3, photo_file_name: "boat_1.jpg")
 
 #route creation using creation method defined in model
 # first set of routes travel from big island to big island with a stop midway at a small island

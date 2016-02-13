@@ -4,9 +4,9 @@ class FollowshipsController < ApplicationController
   def create
     # creates a followship and attaches it to both captain and ship
     @followship=Followship.create()
-    current_user.followships << (@followship)
     @ship = Ship.find(params[:ship_id]) 
-    puts @ship
+    # puts @ship
+    current_user.followships << (@followship)
     @ship.followships << (@followship)
   end
 end

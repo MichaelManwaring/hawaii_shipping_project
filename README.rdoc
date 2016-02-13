@@ -1,9 +1,31 @@
 == README
 
-Pages
+This project was an assignment for NYCDA Web Development intensive, the central piece of the assignment was to create a rich join table which was achieved here through a `Trip` model which joins `Routes`and `Ships` while having `Jobs` of its own.
+
+
+
+To use the Humuhumunukunukuapua'a shipping app, clone this repository and run Rails Server with `rails s`. 
+
+When the site has booted on localhost:3000, you can sign in as a captain or a customer. Customers have a very limited experience, only being able to create jobs (minimum 8 containers and with a description at least 50 characters).
+
+As a Captain, you can see whats going on with all ships on the 6 Islands of Hawaii, follow them, create new ships for your company, and take ships of yours on trips to carry cargo.
+
+To take a trip click on the info button of your ship and you will be directed to a page displaying the 3 possible routes you can take from the current location and the jobs available on that route. Click on that route to go to the jobs selection page.
+
+Here you can click to add on as many jobs as you would like, then hit the "take trip" button at the top of the page and the full job will be displayed.
+
+
+At this point there is not a means of displaying all trips taken, or total money earned by a captain. These would be the next steps in functionality, if you have a desire to add them please give this repository a fork. But otherwise this project is a showcase of careful model building and elegant design.
+ 
+
+
+
+
+
+Views:
 https://precursorapp.com/document/Untitled-17592202721455.png
 
-Models:
-[![Precursor](https://precursorapp.com/document/Untitled-17592202711606.svg?auth-token=)](https://precursorapp.com/document/Untitled-17592202711606)
+Models: 
+(https://precursorapp.com/document/Untitled-17592202711606.svg?auth-token=)](https://precursorapp.com/document/Untitled-17592202711606)
 
 <tt>rake doc:app</tt>.
