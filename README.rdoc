@@ -1,6 +1,6 @@
 == README
 
-This project was an assignment for NYCDA Web Development intensive, the central piece of the assignment was to create a rich join table which was achieved here through a `Trip` model which joins `Routes`and `Ships` while having `Jobs` of its own.
+This project was an assignment for NYCDA Web Development intensive, the central piece of the assignment was to create a rich join table which was achieved here through a `Trip` model which joins `Routes` and `Ships` while having `Jobs` of its own.
 
 
 
